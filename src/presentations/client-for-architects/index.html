@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Handlee|Nothing+You+Could+Do|Open+Sans+Condensed:300"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../jspm_packages/github/hakimel/reveal.js@3.3.0/css/reveal.css">
+    <link rel="stylesheet" href="../../../jspm_packages/github/hakimel/reveal.js@3.3.0/css/theme/white.css">
+    <link rel="stylesheet" href="../../../src/css/common.css">
+    <link rel="stylesheet" href="../../css/solarized-light.css">
+    <link rel="stylesheet" href="css/client-for-architects.css">
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? './css/print/pdf.css' : './css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>
+                <span>Help!
+                    <img style="height:0.5em;" class="plain" src="./img/cap-logo.svg">
+                </span>
+                <span style="display:block">my Project has a ...</span>
+            </h1>
+            <h2><span class="fallbackColor">... Frontend!</span></h2>
+
+            <img style="height:6em; margin-left: -15em; margin-top:0em" class="plain" src="./img/frontend.png">
+            <!--Image taken from: https://medium.com/fed-or-dead/javascript-really-is-overtaking-the-world-5b59b5af41ed-->
+
+            <p style="margin-left: 10em; margin-top:-5em" class="author">
+                <span style="display:block">by</span>
+                <span style="display:block">Ewa Nestorowicz</span>
+                <span>Bernd Olleck</span>
+            </p>
+        </section>
+
+        <section data-background-color="var(--agenda-bg)">
+            <h1 class="fallbackColor">
+                Agenda
+            </h1>
+            <ul class="no-bullets" style="display: block; float: left">
+                <li><strong>Definition of a frontend and its job</strong></li>
+                <li><strong>Concepts</strong></li>
+                <ul>
+                    <li>UI Component Tree</li>
+                    <li>Complexity</li>
+                    <li>Threads and Asynchronous Behavior</li>
+                    <li>Testing</li>
+                </ul>
+                <li><strong>Frameworks and Libraries</strong></li>
+                <li><strong>Web</strong></li>
+                <ul>
+                    <li>UI-Design / CSS</li>
+                </ul>
+            </ul>
+            <img class="plain" style="float: right; width: 11em; margin-top: 2em;" src="./img/agenda.png">
+            <!--Image taken from: https://invexi.com/musings/the-glossary-graphic-designer-vs-front-end-development-->
+
+        </section>
+
+        <section data-background-color="var(--tertiary-color)">
+            <h1 class="flippedColor">
+                Your experience
+                <span style="color:#10e0ff">?</span>
+            </h1>
+        </section>
+    </div>
+</div>
+
+<script src="../../../jspm_packages/system.js"></script>
+<script src="./config.js"></script>
+<script>
+    System.import('./js/main');
+</script>
+</body>
+
+</html>

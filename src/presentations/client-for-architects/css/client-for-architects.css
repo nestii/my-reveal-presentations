@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #00488D;
+  --secondary-color: #d3e4ee;
+  --tertiary-color: #274c5e;
+  --fallback-color: black;
+  --bg-color: white;
+  --link-color: lightgreen;
+  --text-highlight: #6ca0e8;
+  --agenda-bg: #22b3c8;
+
+  --primary-font-family: 'Open Sans Condensed';
+  --secondary-font-family: 'Lobster Two';
+}
+
+
+/*
+ ---------    General look  -----------
+*/
+html body {
+    background-color: var(--bg-color);
+}
+
+.reveal .slides .flippedColor {
+    color: var(--bg-color);
+}
+
+.reveal .slides .primaryColor {
+    color: var(--primary-color);
+}
+
+.reveal .slides .secondaryColor {
+    color: var(--secondary-color);
+}
+
+.reveal .slides .tertiaryColor {
+    color: var(--tertiary-color);
+}
+
+.reveal .slides .textHighlight {
+    color: var(--text-highlight);
+    font-weight: bold;
+}
+
+.reveal .slides .fallbackColor {
+    color: var(--fallback-color);
+}
+
+.reveal .slides .primaryFont {
+    font-family: var(--primary-font-family);
+}
+
+.reveal .slides .secondaryFont {
+    font-family: var(--secondary-font-family)
+}
+
+
+.reveal p, .reveal ul li, .reveal ol li {
+     font-family:  var(--primary-font-family);
+}
+
+.reveal .slides h3 {
+     text-transform: none;
+}
+
+.reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3 {
+     color: var(--primary-color);
+     font-family: var(--primary-font-family)
+}
+
+
+.reveal .slides a:link {
+    color: var(--link-color);
+}
+
+.reveal .slides a:visited {
+    color: var(--link-color);
+}
+
+.reveal .slides button {
+    background: var(--bg-color);
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 20px;
+    border: 2px solid #0098FF;
+    border-radius: 5px;
+    color: var(--primary-color);
+}
+
+.reveal .slides button:hover {
+    background: #0098FF;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--bg-color);
+}
+
+
+/*---------------------------------*/
+
+
+.reveal .replacement {
+    position: relative;
+}
+
+.reveal .replacement .fragment {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////*/
+
+
+.reveal .slides .author {
+    font-family: 'Nothing You Could Do';
+    color: #4d4e4f;
+}
+
+.reveal .slides .topic .top {
+    background: -webkit-linear-gradient(top, #eb4a79, #f7a781);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/*.reveal .slides .topic .middle {
+    background: linear-gradient(
+        #f7a781 50%,
+        #5db3c6 50%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}*/
+
+.reveal .slides .topic .middle {
+    color: #6d6868;
+}
+.reveal .slides .topic .bottom {
+    background: linear-gradient(130deg,
+         #5db3c6 80%,
+         #a5dce4 50%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+
+
+.reveal ul.coloured-bullets{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+}
+
+.reveal .normal-text{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+}
+
+.reveal blockquote {
+    box-shadow: 0px 0px 2px rgba(0, 188, 212, 0.8) !important;
+}
+
+
+.reveal .link_footer {
+    padding-top: 40px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+.reveal .slides .main-slide {
+    font-family: 'Nothing You Could Do';
+    color: white;
+}
+
+.reveal .slides .main-title {
+    font-family: 'Nothing You Could Do';
+    color: #3b78e7;
+}
+
+.reveal .slides .title_header {
+    float: left;
+}
+
+
+.reveal .slides .title_wrapper {
+    display: inline-block;
+}
+
+.reveal .slides section .fragment.highlight-green.visible {
+    color: green !important;
+}
