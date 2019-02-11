@@ -30,6 +30,16 @@
     margin-left: -38px;
 }
 
+.reveal li.arrow {
+    list-style: none;
+    margin-left: -38px;
+}
+
+.reveal li.arrow::before {
+    content: "⇒";
+    padding-right: 5px;
+}
+
 .reveal .slides .inline {
     display: inline;
     margin: auto
