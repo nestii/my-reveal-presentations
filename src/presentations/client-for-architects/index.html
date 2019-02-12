@@ -67,6 +67,256 @@
 
         </section>
 
+        <section>
+            <!-- Definition of a Frontend -->
+            <section>
+                <h1>Definition of a Frontend</h1>
+                <ul>
+                    <li class="no-bullet">For the purpose of this talk, a Frontend is defined by having</li>
+                    <li>interaction with a user</li>
+                    <li>significant amount of logic running on a local machine</li>
+                    <ul>
+                        <li>i.e. not a terminal in the Host sense</li>
+                    </ul>
+                    <li>calls to some kind of logic (remote or local) which can be accessed through an API</li>
+                    <ul>
+                        <li>as opposed to a document centric application like Excel or Word</li>
+                    </ul>
+                    <li>no restriction on the runtime environment:
+                        <br/>can be native, web, mobile, embedded, …
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Job of a Frontend</h1>
+                <!-- TODO BOL: USE A GRAPHIC -->
+                <ul>
+                    <li>Display static frame: boxes, tabs, buttons, labels</li>
+                    <li>Display dynamic data</li>
+                    <li>Allow and handle user input and validation</li>
+                    <li>Allow and handle user actions</li>
+                    <li>Manage state (display and logical)</li>
+                    <li>Organize dialogs, allow communication between them</li>
+                    <li>Manage startup/shutdown, user session and settings</li>
+                    <li>Process things / communicate with backend</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Overview: Key Concepts of the Frontend -->
+        <section>
+            <section>
+                <h1>Key Concepts (1/2)</h1>
+                <ul>
+                    <LI>UI Component Tree
+                        <br/>Everything is a rectangle in a hierarchy – where to draw the line?</LI>
+                    <LI>Complexity
+                        <br/>Tables are hard, Trees are harder, and you‘re always fighting constraints, but how do
+                        you divide and conquer?
+                    </LI>
+                    <LI>Threads
+                        <br/>There is only one thread and it processes all events asynchronously</LI>
+                    <LI>Testing
+                        <br/>Frontends tests can be automated – but do you really want to?</LI>
+                </ul>
+            </section>
+
+            <section>
+                <h1>Key Concepts (2/2)</h1>
+                <ul>
+                    <LI>Authorization
+                        <br/>The frontend wants to know all the rights, not just one!</LI>
+                    <LI>Error handling
+                        <br/>Detect » Analyze » Display (» Quit or Continue?)</LI>
+                    <LI>Backend API and Calls
+                        <br/>Can we please generate this? And when may writing by hand this be better?</LI>
+                </ul>
+                <!-- TODO BOL add more teasers ? -->
+            </section>
+        </section>
+
+        <!-- TODO EWA: UI Component Tree -->
+        <section>
+            <h1>UI Component Tree</h1>
+        </section>
+
+        <!-- Section Complexity Overview -->
+        <section>
+            <section>
+                <h1>Complexity (1/2)</h1>
+                <ul>
+                    <li class="no-bullet">What do we spend significant time on?</li>
+                    <LI>Application Size</LI>
+                    <UL>
+                        <LI>A lot of dialogs which interact</LI>
+                        <LI>Large dialogs with lots of things happening in them</LI>
+                        <LI class="arrow">Client and Dialog architecture</LI>
+                    </UL>
+                    <LI>Widgets with lots of (contradicting) features or combinations: Tables, Trees</LI>
+                    <UL>
+                        <LI class="arrow">Challenge as soon as possible, early prototyping</LI>
+                    </UL>
+                    <LI>Doing the same thing in different ways: “I want it just like that but …”</LI>
+                    <UL>
+                        <LI class="arrow">Challenge as soon as possible, use Design System</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h1>Complexity (2/2)</h1>
+                <ul>
+                    <LI>Layout</LI>
+                    <UL>
+                        <LI>"CSS" - "Gesundheit!"</LI>
+                    </UL>
+                    <LI>Large amounts of data, e.g. tables but also rich text/html</LI>
+                    <UL>
+                        <LI class="arrow">Lazy loading, caching, viewports</LI>
+                    </UL>
+                    <LI>Debugging</LI>
+                    <UL>
+                        <LI>Performance, layout and focus problems</LI>
+                    </UL>
+                </ul>
+                <!-- TODO BOL: Include? What costs runtime in the client? -->
+            </section>
+        </section>
+
+        <!-- Section Complexity - Application Size -->
+        <section>
+            <section>
+                <h1>
+                    Application Size:
+                    <BR/>Client Architecture
+                </h1>
+                <ul>
+                    <LI class="no-bullet">Split the client into dialog components</LI>
+                    <LI>Visible Rectangles as a guideline</LI>
+                    <UL>
+                        <LI>If not: most likely problematic</LI>
+                    </UL>
+                    <LI>UI Component Tree » Dialog Component Tree</LI>
+                    <UL>
+                        <LI>Caution: Consider layout constraints, e.g. If a dialog has a min/max view, or it can be moved
+                            around</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h1>Client Architecture</h1>
+                <ul>
+                    <LI>Communication rules apply</LI>
+                    <UL>
+                        <LI>Parent knows Child</LI>
+                        <LI>Child can define requirements for parent</LI>
+                        <LI>Global Services may be dangerous</LI>
+                        <LI>Lifecycle has to be synchronized between parent and child</LI>
+                        <!-- TODO BOL: Do we need here more about communication? -->
+                    </UL>
+                    <LI>Separate hierarchy of dialog components or re-use the UI-Components?</LI>
+                </ul>
+            </section>
+            <section>
+                <h1>Client Architecture</h1>
+                <ul>
+                    <LI>Dialog component API (covering display, data, user actions, …)</LI>
+                    <UL>
+                        <LI>What has to be supplied from the parent:
+                            <br/>Data, User context, external events (e.g. external user actions)?</LI>
+                        <LI>What has to be supplied from the child:
+                            <br/>UI Component, menu options, status information</LI>
+                        <LI>What can be accessed implicitly (global service)?</LI>
+                        <LI>What has to be handled by the parent:
+                            <br/>data changes, other actions</LI>
+                    </UL>
+                    <LI>Concept: Smart- and Dumb-Components</LI>
+                    <UL>
+                        <LI>Dumb-Component: Self contained, gets everything from parent</LI>
+                        <LI>Smart-Component: Calls around (e.g. local and remote services)</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h1>
+                    Application Size:
+                    <BR/>Dialog Architecture
+                </h1>
+                <ul>
+                    <LI class="no-bullet">Use focused components to reduce complexity within a dialog</LI>
+                    <LI>Visual:</LI>
+                    <UL>
+                        <LI>Build and use UI Components like Tables, Trees, Magic-Drop-Downs, …</LI>
+                        <LI>Consider using visual designers if available</LI>
+                    </UL>
+                    <LI>Non-visual (...)</LI>
+                </ul>
+            </section>
+            <section>
+                <h1>Dialog Architecture</h1>
+                <ul>
+                    <LI>Non-Visual:</LI>
+                    <UL>
+                        <LI>Data handing:</LI>
+                        <UL>
+                            <LI>simple references » complex models</LI>
+                            <!-- TODO BOL: be more detailed what data models mean? -->
+                        </UL>
+                        <LI>State management:</LI>
+                        <UL>
+                            <LI>Declare dependencies instead of programming them</LI>
+                            <LI>Use a state engine if necessary</LI>
+                        </UL>
+                        <LI>Actions: extract the logic (command pattern) operating on data model and state</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h1>Widgets with lots of (contradicting) features</h1>
+                <ul>
+                    <LI>Use showcases of the UI toolkit library in specification</LI>
+                    <LI>Caution:</LI>
+                    <UL>
+                        <LI>Combinations may not make sense</LI>
+                        <UL>
+                            <LI>E.g. local filtering and sorting of lazy loaded table data will not work</LI>
+                        </UL>
+                        <LI>Features may not work (as intended) in combination</LI>
+                        <LI>UI libraries have bugs. Lots of them. Some even known for ages.</LI>
+                    </UL>
+                    <LI>Have an expert of the UI library at hand, and even then: prototype early</LI>
+                    <LI>Challenge early (this is getting more and more difficult)</LI>
+                </ul>
+            </section>
+
+            <!-- TODO BOL: Doing the same thing slide 15 -->
+        </section>
+
+        <!-- Section Threads and Async Behavior -->
+        <section>
+            <!-- TODO BOL -->
+            Threads and Async behaviour
+        </section>
+
+        <!-- Section Testing -->
+        <section>
+            <!-- TODO EWA -->
+            Testing
+        </section>
+
+        <!-- Section Frameworks and Libraries -->
+        <section>
+            <!-- TODO BOL -->
+            Frameworks and Libraries
+        </section>
+
+        <!-- Section Web -->
+        <section>
+            <!-- TODO EWA -->
+            The Web
+        </section>
+
+
         <section data-background-color="var(--tertiary-color)">
             <h1 class="flippedColor">
                 Your experience
