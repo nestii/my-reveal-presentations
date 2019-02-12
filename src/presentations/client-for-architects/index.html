@@ -43,6 +43,15 @@
             </p>
         </section>
 
+        <section>
+            <span>
+                A frontend developer amongst software architects...
+            </span>
+
+            <img style="height:16em;" class="plain" src="img/penguins.jpeg">
+            <!--Image taken from: https://medium.com/gumtree-dev-team/front-end-architecture-part-1-2046663d0bc -->
+        </section>
+
         <section data-background-color="var(--agenda-bg)">
             <h1 class="fallbackColor">
                 Agenda
@@ -110,15 +119,18 @@
                 <h1>Key Concepts (1/2)</h1>
                 <ul>
                     <LI>UI Component Tree
-                        <br/>Everything is a rectangle in a hierarchy – where to draw the line?</LI>
+                        <br/>Everything is a rectangle in a hierarchy – where to draw the line?
+                    </LI>
                     <LI>Complexity
                         <br/>Tables are hard, Trees are harder, and you‘re always fighting constraints, but how do
                         you divide and conquer?
                     </LI>
                     <LI>Threads
-                        <br/>There is only one thread and it processes all events asynchronously</LI>
+                        <br/>There is only one thread and it processes all events asynchronously
+                    </LI>
                     <LI>Testing
-                        <br/>Frontends tests can be automated – but do you really want to?</LI>
+                        <br/>Frontends tests can be automated – but do you really want to?
+                    </LI>
                 </ul>
             </section>
 
@@ -126,11 +138,14 @@
                 <h1>Key Concepts (2/2)</h1>
                 <ul>
                     <LI>Authorization
-                        <br/>The frontend wants to know all the rights, not just one!</LI>
+                        <br/>The frontend wants to know all the rights, not just one!
+                    </LI>
                     <LI>Error handling
-                        <br/>Detect » Analyze » Display (» Quit or Continue?)</LI>
+                        <br/>Detect » Analyze » Display (» Quit or Continue?)
+                    </LI>
                     <LI>Backend API and Calls
-                        <br/>Can we please generate this? And when may writing by hand this be better?</LI>
+                        <br/>Can we please generate this? And when may writing by hand this be better?
+                    </LI>
                 </ul>
                 <!-- TODO BOL add more teasers ? -->
             </section>
@@ -139,7 +154,110 @@
         <!-- TODO EWA: UI Component Tree -->
         <section>
             <h1>UI Component Tree</h1>
+
+            <ul class="no-bullets" style="display: block; float: left">
+                <li><strong>Architecture overview</strong></li>
+                <ul>
+                    <li>Angular and component driven architecture</li>
+                    <li>Components, Services, Modules</li>
+                    <li>Smart & presentation components</li>
+                </ul>
+            </ul>
+            <img class="plain" style="width: 20em; " src="./img/frontend-structure.png">
+            <!--Image taken from: https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e -->
         </section>
+
+        <section>
+            <h2>Components, Services, Modules</h2>
+            <img class="plain" style="width: 20em; margin-top: 2em;" src="./img/angular-architecture.png">
+            <!--Image taken from: https://angular.io/guide/architecture -->
+            <a href="https://angular.io/guide/architecture">Source</a>
+        </section>
+
+        <section>
+            <h1>Modules</h1>
+            <ul class="no-bullets">
+                <li>Every Angular app has a <strong>root module</strong>, conventionally named AppModule, which provides
+                    the <strong>bootstrap mechanism </strong>that launches the application.
+                    An app typically contains <strong>many </strong> functional modules.
+                </li>
+                <li>Organizing your code into distinct functional modules helps in <strong>managing development of
+                    complex
+                    applications </strong>, and in designing for <strong>reusability</strong>. In addition, this
+                    technique lets you take advantage
+                    of <strong>lazy-loading</strong>—that is, loading modules on demand—to <strong>minimize the amount
+                        of code</strong> that needs to be
+                    loaded at <strong>startup</strong>.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Components</h1>
+            <div style="display: inline-flex;">
+                <ul class="no-bullets">
+                    <li>Every Angular application has <strong>at least one component</strong>, the root component that
+                        connects <strong>a component
+                            hierarchy </strong>with the <strong>page document object model </strong>(DOM).
+                    </li>
+                    <li>
+                        Each component defines a <strong>class</strong>
+                        that contains application data and logic, and is <strong>associated with an HTML
+                        template</strong> that defines a view.
+                    </li>
+                    </li>
+                </ul>
+                <img class="plain" style="width: 12em; height: 10em" src="./img/change-detection.png">
+                <!--Image taken from: https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e -->
+            </div>
+
+        </section>
+
+        <section>
+            <h1>Services</h1>
+            <ul class="no-bullets">
+                <li>For data or logic that <strong>isn't</strong> associated with <strong>a specific view</strong>, and
+                    that you want to share across
+                    components, you create a <strong>service class</strong>.
+                </li>
+                <li><strong>Dependency injection (DI)</strong> lets you keep your component classes <strong>lean and
+                    efficient</strong>. They don't fetch
+                    data from the server, validate user input, or log directly to the console; they
+                    <strong>delegate</strong> such tasks
+                    to services.
+                </li>
+            </ul>
+            <img class="plain" style="width: 12em; margin-top: 1em" src="./img/services.png">
+            <!--Image taken from: https://angular.io/guide/architecture-services -->
+        </section>
+
+        <section data-background-color="var(--tertiary-color)">
+            <h1 class="flippedColor">
+                Why should we divide components
+                <span style="color:#10e0ff">?</span>
+            </h1>
+        </section>
+
+        <section data-background-color="var(--grey-bg)">
+            <h1>Smart & presentation components</h1>
+            <ul class="no-bullets" style="display: block; float: left">
+                <li><strong>Smart components</strong></li>
+                <ul>
+                    <li>define how the app <strong>work</strong></li>
+                    <li>are connected to <strong>services</strong> (often stateful)</li>
+                    <li>know how to <strong>load and persist</strong> data</li>
+                </ul>
+                <li><strong>Presentation components</strong></li>
+                <ul>
+                    <li>receive data via <strong>props</strong> (bindings)</li>
+                    <li>data comes as <strong>input</strong>, changes go as <strong>output</strong></li>
+                </ul>
+            </ul>
+            <img class="plain" style="width: 7em;" src="./img/smart-presentational-components.png">
+            <!--Image taken from: https://jaketrent.com/post/smart-dumb-components-react/ -->
+
+        </section>
+
 
         <!-- Section Complexity Overview -->
         <section>
@@ -198,8 +316,10 @@
                     </UL>
                     <LI>UI Component Tree » Dialog Component Tree</LI>
                     <UL>
-                        <LI>Caution: Consider layout constraints, e.g. If a dialog has a min/max view, or it can be moved
-                            around</LI>
+                        <LI>Caution: Consider layout constraints, e.g. If a dialog has a min/max view, or it can be
+                            moved
+                            around
+                        </LI>
                     </UL>
                 </ul>
             </section>
@@ -223,12 +343,15 @@
                     <LI>Dialog component API (covering display, data, user actions, …)</LI>
                     <UL>
                         <LI>What has to be supplied from the parent:
-                            <br/>Data, User context, external events (e.g. external user actions)?</LI>
+                            <br/>Data, User context, external events (e.g. external user actions)?
+                        </LI>
                         <LI>What has to be supplied from the child:
-                            <br/>UI Component, menu options, status information</LI>
+                            <br/>UI Component, menu options, status information
+                        </LI>
                         <LI>What can be accessed implicitly (global service)?</LI>
                         <LI>What has to be handled by the parent:
-                            <br/>data changes, other actions</LI>
+                            <br/>data changes, other actions
+                        </LI>
                     </UL>
                     <LI>Concept: Smart- and Dumb-Components</LI>
                     <UL>
