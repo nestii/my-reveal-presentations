@@ -11,3 +11,4 @@ npm-debug.log
 .idea/vcs.xml
 .idea/workspace.xml
 .idea/.name
+/jspm_packages/
