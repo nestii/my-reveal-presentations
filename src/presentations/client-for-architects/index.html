@@ -436,8 +436,35 @@
 
         <!-- Section Testing -->
         <section>
-            <!-- TODO EWA -->
-            <h1>Testing</h1>
+            <section>
+                <h1>Testing</h1>
+                <ul class="no-bullets" style="display: block; float: left">
+                    <li><strong>Unit Tests (services, components)</strong> - synchronous and asynchronous</li>
+                    <ul>
+                        <li>Jasmine</li>
+                        <li>Karma</li>
+                        <li>JEST</li>
+                    </ul>
+                    <li><strong>E2E Tests</strong></li>
+                    <ul>
+                        <li>Protractor</li>
+                    </ul>
+                </ul>
+                <img class="plain" style="width: 7em; margin-top: -5.5em; float: right;" src="./img/testing.png">
+                <!--Image taken from: https://medium.com/@aeh.herman/first-steps-in-frontend-testing-with-tdd-bdd-7ddab8796ad6 -->
+            </section>
+
+            <section>
+                <h1>Karma</h1>
+                <img class="plain" style="width: 18em;" src="./img/karma.jpg">
+                <!--Image taken from: http://old-blog.jonasbandi.net/2015/11/karma-and-protractor-illustrated.html -->
+            </section>
+
+            <section>
+                <h1>Protractor</h1>
+                <img class="plain" style="width: 18em;" src="./img/protractor.jpg">
+                <!--Image taken from: http://old-blog.jonasbandi.net/2015/11/karma-and-protractor-illustrated.html -->
+            </section>
         </section>
 
         <!-- Section Frameworks and Libraries -->
@@ -446,26 +473,207 @@
             <h1 class="flippedColor">Frameworks and Libraries</h1>
         </section>
 
+        <section>
+            <section>
+                <h1>What is a JS Framework?</h1>
+                <img class="plain" src="./img/frameworks.png">
+                <!--Image taken from: https://medium.freecodecamp.org/do-we-still-need-javascript-frameworks-42576735949b -->
+            </section>
+
+            <section>
+                <span class="author">
+                    Do I really need all these <strong>tools, dependencies and frameworks</strong>? What is the <strong><span
+                        style="color: #41b883">advantage</span></strong>?
+                    Why and when <strong>Angular</strong> / <strong>React</strong> / <strong>Vue</strong>?
+                </span>
+                <img class="plain" src="./img/angular-react-vue.png">
+                <!-- Image taken from: https://cdn-images-1.medium.com/max/618/0*9N9J9YiGJrISLIBP.png -->
+            </section>
+
+            <section data-background-color="#20b5c1">
+                <h1>Angular</h1>
+                <ul class="no-bullets">
+                    <ul>
+                        <li>introduced by <strong>Google</strong></li>
+                        <li><strong>open source</strong></li>
+                        <li>released in <strong>September 2016</strong></li>
+                        <li><strong>v3</strong> was skipped to avoid semantic version issues</li>
+                        <li><strong>component based architecture</strong></li>
+                    </ul>
+                </ul>
+                <img style="margin-top: -1.6em; float: right" class="plain" src="./img/angular_typescript.png">
+                <!-- Image taken from: https://www.rethinkdb.com/assets/images/posts/2016-01-29-angular-typescript-banner.png -->
+            </section>
+
+            <section>
+                <h1 style="text-transform: none; color: black">Angular</h1>
+                <h5 style="text-transform: none; color: black">pros & cons</h5>
+                <div style="display: flex;">
+                    <ul class="no-bullets">
+                        <ul>
+                            <li>Focus on <strong>components</strong></li>
+                            <li>High performance</li>
+                            <li>Application<strong> Component Tree</strong></li>
+                            <li><strong>Ivy renderer</strong></li>
+                            <li><strong>JIT & AOT</strong></li>
+                            <li><strong>TypeScript</strong></li>
+                            <li><strong>Angular CLI</strong></li>
+                        </ul>
+                    </ul>
+
+                    <ul class="no-bullets">
+                        <ul>
+                            <li><strong>Steep learning curve</strong></li>
+                            <li><strong>Complex </strong> Angular Forms may be difficult</li>
+                            <li>RxJS may be <strong>difficult</strong></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <img class="plain" style="float: right; margin-top: -4.4em;" src="./img/angular.png">
+                <!-- Image taken from: https://avatars2.githubusercontent.com/u/139426?v=4&s=400 -->
+            </section>
+
+            <section>
+                <h1>React</h1>
+                <ul class="no-bullets">
+                    <ul>
+                        <li>introduced by <strong>Facebook</strong></li>
+                        <li><strong>open source</strong></li>
+                        <li>released in <strong>May 2013</strong></li>
+                        <li><strong>V </strong> layer in the <strong>MVW </strong>models</li>
+                    </ul>
+                </ul>
+                <img style="margin-top: -0.1em; float: right; width: 8em;" class="plain" src="./img/react.png">
+                <!-- Image taken from: https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png -->
+            </section>
+
+            <section data-background-color="#222222">
+                <h1 style="text-transform: none; color: white; display: inline;">React</h1>
+                <h5 style="text-transform: none; color: white">pros & cons</h5>
+                <div style="display: flex;">
+                    <ul class="no-bullets">
+                        <ul>
+                            <li>Focus on <strong>components</strong></li>
+                            <li><strong>JSX</strong></li>
+                            <li><strong>Virtual DOM</strong></li>
+                            <li>High <strong>performance</strong></li>
+                            <li><strong>Light-weighted</strong></li>
+                            <li><strong>Redux & flux </strong>architecture</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="no-bullets">
+                        <ul>
+                            <li><strong>Limitation </strong> of documentation</li>
+                            <li>Trying to <i>hook</i> React with <strong>other libraries </strong> may be problematic
+                            </li>
+                            <li>Being <strong>too flexible </strong>in structure can be problematic</li>
+
+                        </ul>
+                    </ul>
+                </div>
+
+                <img style="float: right; height: 5em; margin-top: -4.1em;" class="plain" src="./img/react-js.jpg">
+                <!-- Image taken from:http://media02.hongkiat.com/thumbs/640x410/react-js-web-developers-toolkit.jpg -->
+            </section>
+
+            <section>
+                <h1 style="text-transform: none; color: black">Vue.js</h1>
+                <ul class="no-bullets">
+                    <ul>
+                        <li>introduced by <strong>Evan You</strong></li>
+                        <li><strong>open source</strong></li>
+                        <li>released in <strong>February 2014</strong></li>
+                    </ul>
+                </ul>
+                <img style="float: right; width: 4em" class="plain" src="./img/vue.png">
+                <!-- Image taken from: https://vuejs.org/images/logo.png -->
+            </section>
+
+            <section>
+                <h1 style="text-transform: none; color: black">Vue.js</h1>
+                <h5 style="text-transform: none; color: black">pros & cons</h5>
+                <div style="display: flex;">
+                    <ul class="no-bullets">
+                        <ul>
+                            <li><strong>Small </strong>size</li>
+                            <li><strong>Virtual DOM</strong></li>
+                            <li><strong>Flexibility</strong></li>
+                            <li><strong>Simplicity in syntax </br> & project setup</strong></li>
+                            <li><strong>Fast</strong> rendering</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="no-bullets">
+                        <ul>
+                            <li>Language <strong>barrier</strong></li>
+                            <li><strong>Closed and small </strong>community development</li>
+                        </ul>
+                    </ul>
+                </div>
+                <img style="margin-top: -5em; float: right" class="plain" src="./img/vue_cover.png">
+                <!-- Image taken from: https://cdn-images-1.medium.com/max/1600/1*VvT44eH8rT8P35cKGTxyOw.png -->
+            </section>
+        </section>
+
+
         <!-- Section Web -->
         <section data-background-color="var(--agenda-bg)">
             <!-- TODO EWA -->
             <h1 class="flippedColor">The Web</h1>
         </section>
-
         <section>
-            <h1>Chrome dev tools</h1>
-            <img class="plain" style="width: 12em;" src="./img/chrome-dev-tools.jpg">
-            <!--Image taken from: https://www.ostraining.com/blog/webdesign/chrome-dev-tools/ -->
-        </section>
+            <section>
+                <h1>What is ES5?</h1>
+                <ul class="no-bullets">
+                    <ul>
+                        <li>ES5 was created to <strong>standardize </strong>JavaScript</li>
+                        <li>ES5 is a shortcut for <strong>ECMAScript 5</strong></li>
+                        <li>ES5 was released in <strong>2009</strong></li>
+                    </ul>
+                </ul>
+                <!--<img class="plain" style="width: 12em;" src="./img/chrome-dev-tools.jpg">-->
+                <!--Image taken from: https://www.ostraining.com/blog/webdesign/chrome-dev-tools/ -->
+            </section>
 
-        <section data-background-iframe="https://caniuse.com/#feat=css-grid" data-background-interactive>
-        </section>
+            <section>
+                <h1>EcmaScript Standards</h1>
+                <ul>
+                    <li>ES5 (2009)</li>
+                    <li>ES6 (2015)</li>
+                    <li>ES7 (2016)</li>
+                    <li>ES8 (2017)</li>
+                    <li>ES9 (2018)</li>
+                </ul>
+                <br><br>
+                <span class="author">
+                    EcmaScript is the <strong>official</strong> name for JavaScript.
+                </span>
+            </section>
 
+            <section>
+                <h1>Why is ES5 still relevant?</h1>
+                <ul>
+                    <li>There are <strong>lots </strong> of legacy projects, build scripts, etc. written in <strong>ES5</strong></li>
+                    <li><strong>Older Browsers </strong> (IE,...) support ES5 via <strong>polyfills</strong> (shims)</li>
+                </ul>
+            </section>
 
-        <section>
-            <h1>Literature recommendation</h1>
-            <img class="plain" style="width: 8em;" src="./img/js-the-good-parts.jpg">
-            <!--Image taken from: https://www.amazon.fr/Javascript-Good-Parts-D-Crockford/dp/0596517742 -->
+            <section data-background-iframe="https://caniuse.com/#feat=css-grid" data-background-interactive>
+            </section>
+
+            <section>
+                <h1>Chrome dev tools</h1>
+                <img class="plain" style="width: 12em;" src="./img/chrome-dev-tools.jpg">
+                <!--Image taken from: https://www.ostraining.com/blog/webdesign/chrome-dev-tools/ -->
+            </section>
+
+            <section>
+                <h1>Literature recommendation</h1>
+                <img class="plain" style="width: 8em;" src="./img/js-the-good-parts.jpg">
+                <!--Image taken from: https://www.amazon.fr/Javascript-Good-Parts-D-Crockford/dp/0596517742 -->
+            </section>
         </section>
 
         <section data-background-color="var(--tertiary-color)">
