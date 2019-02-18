@@ -156,6 +156,7 @@
                     </LI>
                 </ul>
                 <!-- TODO BOL add more teasers ? -->
+                <!--TODO FROM ENE: Caching? -->
             </section>
         </section>
 
@@ -165,6 +166,11 @@
                 <h1>UI Component Tree</h1>
 
                 <ul class="no-bullets" style="display: block; float: left">
+                    <li><strong>DOM (Document Object Model)</strong></li>
+                    <ul>
+                        <li>Events & event flow</li>
+                        <li>Event bubbling</li>
+                    </ul>
                     <li><strong>Architecture overview</strong></li>
                     <ul>
                         <li>Angular and component driven architecture</li>
@@ -172,8 +178,46 @@
                         <li>Smart & presentation components</li>
                     </ul>
                 </ul>
-                <img class="plain" style="width: 20em; " src="./img/frontend-structure.png">
+                <img class="plain" style="width: 14em; " src="./img/frontend-structure.png">
                 <!--Image taken from: https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e -->
+            </section>
+
+            <section>
+                <h1>DOM</h1>
+                <h5>Document Object Model</h5>
+                <p>The <strong>HTML DOM </strong>is a standard object model and programming interface for HTML. It's a
+                    standard for how
+                    to <strong>get, change, add, or delete </strong>HTML elements.</p>
+                <img class="plain" style="width: 14em; " src="./img/dom.gif">
+                <!--Image taken from: https://www.w3schools.com/js/js_htmldom.asp -->
+            </section>
+
+            <section>
+                <h1>Event flow</h1>
+                <blockquote><p><strong>Events </strong>are responsible for <strong>interaction</strong> of JavaScript with HTML web
+                    pages.</p>
+                </blockquote>
+                <div style="display: inline-flex;">
+                    <p>Basic example?</p>
+                    <p class="primaryColor"><strong>&nbsp Button click</strong></p>
+                </div>
+
+                <p><strong>Event flow </strong> is the <strong>order </strong>in which event is
+                    <strong>received </strong>on the web
+                    page. If a <strong>nested element </strong> has been clicked, the click event is
+                    <strong>triggered </strong>on <strong>each parent </strong>of the
+                    nested element.</p>
+
+            </section>
+
+            <section>
+                <h1>Event bubbling</h1>
+                <p>When an <strong>event </strong>happens on an element, it <strong>first </strong>runs the handlers on
+                    <strong>it</strong>, then on its <strong>parent</strong>, then all
+                    the way up on other <strong>ancestors</strong>.</p>
+                <img class="plain" style="width: 12em; " src="./img/event-bubbling.png">
+                <!--Image taken from: https://medium.com/@vsvaibhav2016/event-bubbling-and-event-capturing-in-javascript-6ff38bec30e -->
+                <p class="author"><strong>Events go up!</strong></p>
             </section>
 
             <section>
@@ -292,6 +336,7 @@
                     <UL>
                         <LI class="arrow">Challenge as soon as possible, use Design System</LI>
                     </UL>
+                    <!--TODO FROM ENE: I'd add here sth about: bundling, tree-shaking, minification -->
                 </ul>
             </section>
             <section>
@@ -311,6 +356,7 @@
                     </UL>
                 </ul>
                 <!-- TODO BOL: Include? What costs runtime in the client? -->
+                <!--TODO FROM ENE: JIT, AOT compilation? -->
             </section>
         </section>
 
@@ -452,6 +498,42 @@
                 </ul>
                 <img class="plain" style="width: 7em; margin-top: -5.5em; float: right;" src="./img/testing.png">
                 <!--Image taken from: https://medium.com/@aeh.herman/first-steps-in-frontend-testing-with-tdd-bdd-7ddab8796ad6 -->
+            </section>
+
+            <section>
+                <h1>Synchronous and asynchronous</h1>
+                <h5>Tests</h5>
+                <div style="display: inline-flex;">
+                    <p><strong>How </strong>to</p>
+                    <p style="color: lightseagreen"><strong>&nbsptest </strong></p>
+                    <p>&nbspa <strong>code </strong>which relies on</p>
+                    <p style="color: lightseagreen"><strong>&nbspasynchronous actions and operations</strong></p>
+                    <p><strong>?</strong></p>
+                </div>
+                <ul class="no-bullets" style="float: left;">
+                    <li><strong>Does </strong>the code...</li>
+                    <ul>
+                        <li>...make <strong>asynchronous </strong>calls?</li>
+                        <li>...use <strong>XHR, Promises, Observables</strong>?</li>
+                        <li>...use <strong>external </strong>templates and styles?</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section>
+                <h4>How to...</h4>
+                <h1>test</h1>
+                <h4>...async code?</h4>
+                <blockquote><p>Use <strong>utilities </strong> that make the test <strong>wait </strong>until all asynchronous
+                    operations are <strong>completed</strong>.</p></blockquote>
+                <ul class="no-bullets" style="float: left;">
+                    <li>In Angular...</li>
+                    <ul>
+                        <li><strong>async & whenStable</strong></li>
+                        <li><strong>fakeAsync & tick</strong></li>
+                        <li><strong>jasmine done function</strong></li>
+                    </ul>
+                </ul>
             </section>
 
             <section>
@@ -633,8 +715,6 @@
                         <li>ES5 was released in <strong>2009</strong></li>
                     </ul>
                 </ul>
-                <!--<img class="plain" style="width: 12em;" src="./img/chrome-dev-tools.jpg">-->
-                <!--Image taken from: https://www.ostraining.com/blog/webdesign/chrome-dev-tools/ -->
             </section>
 
             <section>
@@ -655,12 +735,49 @@
             <section>
                 <h1>Why is ES5 still relevant?</h1>
                 <ul>
-                    <li>There are <strong>lots </strong> of legacy projects, build scripts, etc. written in <strong>ES5</strong></li>
-                    <li><strong>Older Browsers </strong> (IE,...) support ES5 via <strong>polyfills</strong> (shims)</li>
+                    <li>There are <strong>lots </strong> of legacy projects, build scripts, etc. written in
+                        <strong>ES5</strong></li>
+                    <li><strong>Older Browsers </strong> (IE,...) support ES5 via <strong>polyfills</strong> (shims)
+                    </li>
                 </ul>
             </section>
 
-            <section data-background-iframe="https://caniuse.com/#feat=css-grid" data-background-interactive>
+            <section>
+                <h1>TypeScript</h1>
+                <ul>
+                    <li>is a <strong>typed superset </strong>of JavaScript that <strong>compiles </strong>to plain
+                        JavaScript
+                    </li>
+                    <li>was invented by <strong>Microsoft</strong></li>
+                </ul>
+                <img class="plain" style="width: 5em; float: right" src="./img/typescript.png">
+                <!--Image taken from: https://medium.com/@onejohi/getting-started-with-typescript-614ceef0921c -->
+            </section>
+
+            <section>
+                <h1>Babel</h1>
+                <h5>a JavaScript compiler</h5>
+                <p>It is a <strong>toolchain </strong>that is mainly used to <strong>convert ECMAScript 2015+ </strong>
+                    code into a <strong>backwards compatible</strong>
+                    version of JavaScript in <strong>current and older </strong>browsers or environments.</p>
+                <pre><code class="javascript">
+// Babel Input: ES2015 arrow function
+[1, 2, 3].map((n) => n + 1);
+
+// Babel Output: ES5 equivalent
+[1, 2, 3].map(function(n) {
+  return n + 1;
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Can I Use?</h1>
+                <p><a href="https://caniuse.com/#feat=css-grid">The site</a> provides <strong>up-to-date browser support
+                    tables </strong>for the web technologies and features.</p>
+                <p>For example: <strong>css-grid, Array.prototype.find, ...</strong></p>
+                <img class="plain" style="width: 20em;" src="./img/can-i-use.PNG">
+
             </section>
 
             <section>
