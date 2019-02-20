@@ -67,9 +67,6 @@
                 </ul>
                 <li><strong>Frameworks and Libraries</strong></li>
                 <li><strong>Web</strong></li>
-                <ul>
-                    <li>UI-Design / CSS</li>
-                </ul>
             </ul>
             <img class="plain" style="float: right; width: 11em; margin-top: 2em;" src="./img/agenda.png">
             <!--Image taken from: https://invexi.com/musings/the-glossary-graphic-designer-vs-front-end-development-->
@@ -103,7 +100,7 @@
 
             <section>
                 <h1>Job of a Frontend</h1>
-                <!-- TODO BOL: USE A GRAPHIC -->
+                <!-- TODO BOL (1): USE A GRAPHIC -->
                 <ul>
                     <li>Display static frame: boxes, tabs, buttons, labels</li>
                     <li>Display dynamic data</li>
@@ -133,7 +130,7 @@
                         <br/>Tables are hard, Trees are harder, and you‘re always fighting constraints, but how do
                         you divide and conquer?
                     </LI>
-                    <LI>Threads
+                    <LI>Threads and Async Behaviour
                         <br/>There is only one thread and it processes all events asynchronously
                     </LI>
                     <LI>Testing
@@ -158,11 +155,11 @@
                         <br/>Can be a nightmare with object structures...
                     </LI>
                 </ul>
-                <!-- TODO BOL add more teasers ? -->
+                <!-- TODO BOL (3) add more teasers ? -->
             </section>
         </section>
 
-        <!-- TODO EWA: UI Component Tree -->
+        <!-- UI Component Tree -->
         <section>
             <section>
                 <h1>UI Component Tree</h1>
@@ -317,13 +314,16 @@
 
             </section>
         </section>
-        <!-- Section Complexity Overview -->
 
+        <!-- Section Complexity -->
         <section>
             <section>
-                <h1>Complexity (1/2)</h1>
+                <h1>Complexity</h1>
+                <P>What do we spend significant time on?</P>
+            </section>
+            <section>
+                <h2>Complexity (1/2)</h2>
                 <ul>
-                    <li class="no-bullet">What do we spend significant time on?</li>
                     <LI>Application Size</LI>
                     <UL>
                         <LI>A lot of dialogs which interact</LI>
@@ -341,7 +341,7 @@
                 </ul>
             </section>
             <section>
-                <h1>Complexity (2/2)</h1>
+                <h2>Complexity (2/2)</h2>
                 <ul>
                     <LI>Layout</LI>
                     <UL>
@@ -356,17 +356,10 @@
                         <LI>Performance, layout and focus problems</LI>
                     </UL>
                 </ul>
-                <!-- TODO BOL: Include? What costs runtime in the client? -->
+                <!-- TODO BOL (3): Include? What costs runtime in the client? -->
             </section>
-        </section>
-
-        <!-- Section Complexity - Application Size -->
-        <section>
             <section>
-                <h1>
-                    Application Size:
-                    <BR/>Client Architecture
-                </h1>
+                <h2>Application Size: Client Architecture</h2>
                 <ul>
                     <LI class="no-bullet">Split the client into dialog components</LI>
                     <LI>Visible Rectangles as a guideline</LI>
@@ -383,7 +376,7 @@
                 </ul>
             </section>
             <section>
-                <h1>Client Architecture</h1>
+                <h2>Client Architecture</h2>
                 <ul>
                     <LI>Communication rules apply</LI>
                     <UL>
@@ -391,21 +384,21 @@
                         <LI>Child can define requirements for parent</LI>
                         <LI>Global Services may be dangerous</LI>
                         <LI>Lifecycle has to be synchronized between parent and child</LI>
-                        <!-- TODO BOL: Do we need here more about communication? -->
+                        <!-- TODO BOL (3): Do we need here more about communication? -->
                     </UL>
                     <LI>Separate hierarchy of dialog components or re-use the UI-Components?</LI>
                 </ul>
             </section>
             <section>
-                <h1>Client Architecture</h1>
+                <h2>Client Architecture</h2>
                 <ul>
                     <LI>Dialog component API (covering display, data, user actions, …)</LI>
                     <UL>
                         <LI>What has to be supplied from the parent:
-                            <br/>Data, User context, external events (e.g. external user actions)?
+                            <br/>Data, User context, external events (e.g. external user actions), ...
                         </LI>
                         <LI>What has to be supplied from the child:
-                            <br/>UI Component, menu options, status information
+                            <br/>UI Component, menu options, status information, ...
                         </LI>
                         <LI>What can be accessed implicitly (global service)?</LI>
                         <LI>What has to be handled by the parent:
@@ -420,10 +413,7 @@
                 </ul>
             </section>
             <section>
-                <h1>
-                    Application Size:
-                    <BR/>Dialog Architecture
-                </h1>
+                <h2>Application Size: Dialog Architecture</h2>
                 <ul>
                     <LI class="no-bullet">Use focused components to reduce complexity within a dialog</LI>
                     <LI>Visual:</LI>
@@ -435,14 +425,14 @@
                 </ul>
             </section>
             <section>
-                <h1>Dialog Architecture</h1>
+                <h2>Dialog Architecture</h2>
                 <ul>
                     <LI>Non-Visual:</LI>
                     <UL>
                         <LI>Data handing:</LI>
                         <UL>
                             <LI>simple references » complex models</LI>
-                            <!-- TODO BOL: be more detailed what data models mean? -->
+                            <!-- TODO BOL (2): be more detailed what data models mean? -->
                         </UL>
                         <LI>State management:</LI>
                         <UL>
@@ -454,9 +444,9 @@
                 </ul>
             </section>
             <section>
-                <h1>Widgets with lots of (contradicting) features</h1>
+                <h2>Widgets with lots of<br/>(contradicting) features</h2>
                 <ul>
-                    <LI>Use showcases of the UI toolkit library in specification</LI>
+                    <LI>Use showcases of the UI toolkit library during specification</LI>
                     <LI>Caution:</LI>
                     <UL>
                         <LI>Combinations may not make sense</LI>
@@ -467,17 +457,298 @@
                         <LI>UI libraries have bugs. Lots of them. Some even known for ages.</LI>
                     </UL>
                     <LI>Have an expert of the UI library at hand, and even then: prototype early</LI>
-                    <LI>Challenge early (this is getting more and more difficult)</LI>
+                    <LI>Prototype and challenge early (this is getting more and more difficult)</LI>
+                </ul>
+            </section>
+            <section>
+                <h2>Same but Different (1/2)</h2>
+                <ul>
+                    <li class="no-bullet">“Here I want the normal drop down, but some entries should be displayed grey
+                        and nothing should happen when the user selects them…”</li>
+                    <LI>First option for the developer</LI>
+                    <UL>
+                        <LI>Ignore the already existing project specific UI component for drop down and build this specific
+                            logic from scratch</LI>
+                        <LI class="arrow">Special logic, new bugs, not transferable“but there you already did that – why does it cost
+                            so much to do it here as well?”</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h2>Same but Different (2/2)</h2>
+                <ul>
+                    <LI>Second option for the developer</LI>
+                    <UL>
+                        <LI>Extend the project specific UI component and make this feature configurable</LI>
+                        <LI class="arrow">UI Components get more complicated</LI>
+                    </UL>
+                    <LI class="arrow">Use a stringent and coherent style guide (preferably based on a design system)</LI>
+                    <UL>
+                        <LI>Develop project specific UI components if the UI toolkit does not allow this directly</LI>
+                        <LI>Make sure the client knows this and make the extra cost for exceptions as transparent as
+                            possible</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h2>Layout</h2>
+                <ul>
+                    <LI>Layout Managers/Mechanisms dynamically organize visual elements based on constraints</LI>
+                    <UL>
+                        <LI>Solve the question “what position and what rectangular size should the element have”</LI>
+                        <LI>Typically two calculation methods:</LI>
+                        <UL>
+                            <LI>As much space available as I desire (because of Scrollbars)</LI>
+                            <LI>Things need to fit into a box with a given size</LI>
+                        </UL>
+                    </UL>
+                    <LI>Complexity comes from the number of options and the intuitive knowledge about what the
+                        algorithm does</LI>
+                    <LI class="arrow">Give guidelines on the allowed Layout Managers or mechanisms</LI>
+                    <UL>
+                        <LI>Start during the specification phase</LI>
+                        <LI>Let developers get familiar with the options</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h2>Debugging (1/2)</h2>
+                <ul>
+                    <LI class="no-bullet">In a few situations, debugging is really difficult</LI>
+                    <LI>Layout</LI>
+                    <UL>
+                        <LI>Layout algorithms are influenced by a lot of parameters and circumstances(and a debugger
+                            doesn’t help, intuitive knowledge is helpful)
+                        </LI>
+                    </UL>
+                    <LI>Focus</LI>
+                    <UL>
+                        <LI>A debugger which is used grabs the focus from the application which is debugged</LI>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h2>Debugging (2/2)</h2>
+                <ul>
+                    <LI>Performance of asynchronous events</LI>
+                    <UL>
+                        <LI>Profiling does not necessary help when (multiple) events are triggered for unknown reasons</LI>
+                    </UL>
+                    <LI>UI Toolkits</LI>
+                    <UL>
+                        <LI>You may have to debug through the complex UI toolkit code to understand some (undocumented)
+                            behaviour</LI>
+                    </UL>
+                    <LI class="arrow">Rely on Experience (or really smart developers)</LI>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Section Threads and Async Behaviour -->
+        <section>
+            <section>
+                <h1>Threads and Async behaviour</h1>
+                <ul>
+                    <li class="no-bullet">Aspects</li>
+                    <LI>UI Toolkit Libraries are single threaded » background activity » UI blocking</LI>
+                    <LI>Asynchronous thinking is difficult - just like multi-threaded thinking</LI>
+                    <LI>Modal dialogs have two dimensions</LI>
                 </ul>
             </section>
 
-            <!-- TODO BOL: Doing the same thing slide 15 -->
-        </section>
+            <section>
+                <h2>(Almost all) UI Toolkit Libraries are single threaded!</h2>
+                <ul>
+                    <LI class="arrow">Event Dispatch Thread, Main Thread, Display Thread, Dispatcher Thread, …</LI>
+                    <LI class="no-bullet">Why?</LI>
+                    <LI>Performance
+                        <br/>Thread sync is expensive and doing that every time the user moves the mouse makes
+                        the UI hard to use.
+                    </LI>
+                    <LI>Consistency
+                        <br/>The user does things in a certain order. Multithreading would have to ensure that
+                        order is preserved and thus would not help much.
+                    </LI>
+                    <LI class="no-bullet">And never try to access the UI (read or write) from a background thread, unless you know
+                        exactly what you are doing!
+                    </LI>
+                </ul>
+            </section>
 
-        <!-- Section Threads and Async Behavior -->
-        <section>
-            <!-- TODO BOL -->
-            <h1>Threads and Async behaviour</h1>
+            <section>
+                <h2>Event Queues</h2>
+                <ul>
+                    <LI class="no-bullet">The core of every UI library is an event queue.</LI>
+                    <LI>The UI Thread processes the events in that queue sequentially.</LI>
+                    <LI>Types of events</LI>
+                    <UL>
+                        <LI>all user input events: mouse, keyboard, touch, …</LI>
+                        <LI>system events: window switch, screen change, …</LI>
+                        <LI>programmatic events: callbacks from other threads, timers, …</LI>
+                        <LI>layout and paint requests (this is typically done asynchronously!)</LI>
+                    </UL>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Event Processing</h2>
+                <ul>
+                    <LI class="no-bullet">Do not block the event loop: Event processing (handlers) should be very fast</LI>
+                    <LI>Consequences of taking too much time:</LI>
+                    <UL>
+                        <LI>User perceives the UI as slow or blocked (frozen, not responding)</LI>
+                        <LI>OS/Browser will mark the program/page as frozen and even suggest killing it</LI>
+                    </UL>
+                    <LI>Things which are definitely too slow:</LI>
+                    <UL>
+                        <LI>Backend/Network calls</LI>
+                        <LI>Significant disk IO</LI>
+                        <LI>Drawing a complex image</LI>
+                    </UL>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Handling Processing Time (1/2)</h2>
+                <UL>
+                    <LI class="no-bullet">If event processing cannot be fast, then
+                        <br/>(after other optimization options have been considered)</LI>
+                    <LI>Split up the work into smaller parts and have multiple events</LI>
+                    <UL>
+                        <LI>This works well for things which have to interact with the UI, e.g. painting complex things
+                            incrementally.
+                        </LI>
+                        <LI>Caution: You have to take care of consistency in case other events are mixed into your
+                            events
+                        </LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Handling Processing Time (2/2)</h2>
+                <UL>
+                    <LI>Do things in a background thread and block the UI if it is not read only</LI>
+                    <UL>
+                        <LI>This is the typical thing to do with backend calls</LI>
+                        <LI>Caution:</LI>
+                        <UL>
+                            <LI>Make sure the data transfer from UI thread to background thread and back is thread
+                                safe
+                            </LI>
+                            <LI>If you don’t block the UI for user input, things get inconsistent very fast…</LI>
+                        </UL>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Blocking the UI (1/2)</h2>
+                <UL>
+                    <LI class="no-bullet">We want to block the UI for user input while we’re doing something in the background</LI>
+                    <LI>Default idea:
+                        <br/>Put something transparent over the UI that blocks all user input (mouse, keyboard
+                        focus): “Glass Pane”, “Loading Indicator”, …</LI>
+                    <LI>Caution:</LI>
+                    <UL>
+                        <LI>You cannot simply block/pause the UI thread, because it also handles the display!</LI>
+                        <LI>This can introduce flickering in the display if you have some background activity which is
+                            relatively fast
+                            <UL>
+                                <LI>Possible solution: block UI transparent immediately, then use timer to display something</LI>
+                            </UL>
+                        </LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Blocking the UI (2/2)</h2>
+                <UL>
+                    <LI>Option:
+                        <br/>If the background logic only affects part of the UI, then only that part needs to be
+                        blocked.</LI>
+                    <UL>
+                        <LI>E.g. only lazy loaded details: block this part or make sure it is read only
+                        </LI>
+                        <LI>Caution:</LI>
+                        <UL>
+                            <LI>Always give the user feedback, otherwise it will be very frustrating:
+                            <UL>
+                                <LI>Timer mouse cursor, loading indicator, spinner, "loading..."</LI>
+                            </UL>
+                            </LI>
+                            <LI>This option has to be part of the application design/specification</LI>
+                        </UL>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Blocking cannot be controlled by the framework/library</h2>
+                <UL>
+                    <LI class="no-bullet">This is logic you want to have in the framework and not let developers deal with it!</LI>
+                    <LI class="no-bullet">But:</LI>
+                    <LI>Frameworks don’t know if something we do takes time or not!</LI>
+                    <LI>Frameworks don’t know if something we do needs blocking at all!</LI>
+                    <LI>UI Toolkit Libraries don’t even care about stuff like backend calls:
+                        <br/>If we’re lucky, they supply
+                        a usable technical solution for blocking the UI
+                    </LI>
+                    <LI class="arrow">You have to make sure that the frontend project setup covers this!</LI>
+                    <UL>
+                    <LI>Typically: Select or write a backend access library which automatically blocks the UI while
+                        counting the active requests.
+                    </LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Asynchronous Thinking</h2>
+                <!-- TODO BOL (1) -->
+            </section>
+
+            <section>
+                <h2>Modal Dialogs (1/2)</h2>
+                <UL>
+                    <LI class="no-bullet">Originally, modal dialogs combine two types of blocking behaviour:</LI>
+                    <LI>User Flow:
+                        <br/>The user has to process this dialog</LI>
+                    <UL>
+                        <LI>May be scoped: Operating System, All Program Windows, One Window, One Browser Tab</LI>
+                    </UL>
+                    <LI>Code Flow:
+                        <br/>The openModalDialog() returns when the user made a selection</LI>
+                    <UL>
+                        <LI>Does not block the event queue for painting and selective input! (Magic!)</LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Modal Dialogs (2/2)</h2>
+                <UL>
+                    <LI>Blocking behaviour</LI>
+                    <UL>
+                        <LI>Native: typically both types of block</LI>
+                        <LI>Web: no code block - except when using the
+                            <br/><code style="font-size: 80%">alert('do not use this')</code></LI>
+                    </UL>
+                    <LI>Data behaviour when editing parts of object webs</LI>
+                    <UL>
+                        <LI>Copy: Give the dialog a copy of the data objects</LI>
+                        <UL>
+                            <LI>Integrate copy on Ok</LI>
+                        </UL>
+                        <LI>Undo: Let the dialog change the original</LI>
+                        <UL>
+                            <LI>Us a local "backup" for cancel</LI>
+                            <LI>Reload is typically bad idea (performance)</LI>
+                        </UL>
+                    </UL>
+                </UL>
+            </section>
         </section>
 
         <!-- Section Testing -->
@@ -551,11 +822,81 @@
 
         <!-- Section Frameworks and Libraries -->
         <section data-background-color="var(--agenda-bg)">
-            <!-- TODO BOL & EWA -->
             <h1 class="flippedColor">Frameworks and Libraries</h1>
         </section>
 
         <section>
+            <section>
+                <h1>Frameworks and Libraries</h1>
+                <UL>
+                    <LI class="no-bullet">An attempt at definition:</LI>
+                    <LI>Framework:
+                        <br/>Controls lifecycle, offers specific callbacks or overrides, typically can not be combined with other frameworks
+                    </LI>
+                    <LI>Library:
+                        <br/>Called by us, limited control over an aspect, typically can be combined with other libraries
+                    </LI>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Dimensions for looking at Frameworks/Libraries (1/3)</h2>
+                <UL>
+                    <LI>Which parts of the frontend jobs does the framework address?</LI>
+                    <UL>
+                        <LI>Only presentation = UI-Toolkit: JSF, Swing, WinForms, …</LI>
+                        <LI>Dialog organization (separated from the UI-Toolkit): CUF, …?</LI>
+                        <LI>Almost Everything: Angular, ExtJS, GWT, Android SDK</LI>
+                        <LI>Only a specific task, e.g. data model or state management?</LI>
+                    </UL>
+                    <LI>Opinionated vs. liberal?</LI>
+                    <UL>
+                        <LI>What are the degrees of liberty? Do they match the requirements?</LI>
+                    </UL>
+                    <LI>Plays well with others?</LI>
+                    <UL>
+                        <LI>Does it come with an ecosystem? (e.g. like Angular)</LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Dimensions (2/3)</h2>
+                <UL>
+                    <LI>How does the interaction with the framework/library work?</LI>
+                    <UL>
+                        <LI>Does it start and we plug into it at specific places?</LI>
+                        <UL>
+                            <LI>Then it is probably incompatible with others like it…</LI>
+                        </UL>
+                        <LI>Do we mostly configure it?</LI>
+                        <LI>Do we call it when it has to do something?</LI>
+                    </UL>
+                    <LI>Does it provide debugging support?</LI>
+                    <LI>Does it define a lifecycle?</LI>
+                    <UL>
+                        <LI>Chances are it will be incompatible with others that also define a lifecyle…</LI>
+                    </UL>
+                </UL>
+            </section>
+            <section>
+                <h2>Dimensions (3/3)</h2>
+                <UL>
+                    <LI>What can be perceived of the quality and support?</LI>
+                    <UL>
+                        <LI>Is the documentation good beyond the “hello world”?</LI>
+                        <LI>Does it have a presence on Stack Overflow?</LI>
+                        <LI>What is the bug status?</LI>
+                        <LI>How old / stable / up-to-date is it?</LI>
+                    </UL>
+                    <LI>Is it platform specific?</LI>
+                    <UL>
+                        <LI>If not – is it equally good on all platforms?</LI>
+                    </UL>
+                    <!-- TODO BOL (3): Idea? Image growth of a Framework…: start small with few features, get big and incomprehensible, die ... needs examples -->
+                </UL>
+            </section>
+
             <section>
                 <h1>What is a JS Framework?</h1>
                 <img class="plain" src="./img/frameworks.png">
@@ -698,7 +1039,6 @@
                 <!-- Image taken from: https://cdn-images-1.medium.com/max/1600/1*VvT44eH8rT8P35cKGTxyOw.png -->
             </section>
         </section>
-
 
         <!-- Section Web -->
         <section data-background-color="var(--agenda-bg)">
