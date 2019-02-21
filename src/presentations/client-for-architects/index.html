@@ -22,7 +22,7 @@
 
 <body>
 <div class="reveal">
-    <div class="slides">
+    <code class="slides">
 
         <section>
             <h1>
@@ -100,7 +100,6 @@
 
             <section>
                 <h1>Job of a Frontend</h1>
-                <!-- TODO BOL (1): USE A GRAPHIC -->
                 <ul>
                     <li>Display static frame: boxes, tabs, buttons, labels</li>
                     <li>Display dynamic data</li>
@@ -111,6 +110,12 @@
                     <li>Manage startup/shutdown, user session and settings</li>
                     <li>Process things / communicate with backend</li>
                 </ul>
+            </section>
+
+            <section>
+                <img class="plain" src="./img/OASP_ClientArchitecture_CompleteOverview.png" style="width: 50em">
+                <!-- img taken from https://www.devonfw.com/rich-web-client-school/web-app-architecture/index.html#/19 -->
+                <!--<div class="slide-background present" style="background-size: contain; display: block; background-image: url('./img/OASP_ClientArchitecture_CompleteOverview.png');" data-background-size="contain" data-loaded="true"></div>-->
             </section>
         </section>
 
@@ -706,7 +711,117 @@
 
             <section>
                 <h2>Asynchronous Thinking</h2>
-                <!-- TODO BOL (1) -->
+                <UL>
+                    <LI class="no-bullet">As difficult as parallel programming?</LI>
+                    <LI>Basic Problem:</LI>
+                    <UL>
+                        <LI>We register for lots of events in lots of places</LI>
+                        <UL>
+                            <LI>Mouse, Keyboard, Input changes, ...</LI>
+                        </UL>
+                        <LI>We get callbacks from long running operations</LI>
+                        <LI>There's no guaranteed order or timing</LI>
+                        <UL>
+                            <LI>Almost anything can happen almost any time</LI>
+                        </UL>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Cause and Effect</h2>
+                <UL>
+                    <LI>Types of Events</LI>
+                    <UL>
+                        <LI>Data changed (input in text field, ...)</LI>
+                        <LI>Selection changed (drop down, radio button, ...)</LI>
+                        <LI>Button clicked (Search, Save, ...)</LI>
+                        <LI>Callback (backend returns data, ...)</LI>
+                        <LI>...</LI>
+                    </UL>
+                    <LI>Types of Responses</LI>
+                    <UL>
+                        <LI>Change data (clear input field, ...)</LI>
+                        <LI>Change state (enable something, switch displays, ...)</LI>
+                        <LI>Call something (backend API, printer logic, ...)</LI>
+                        <LI>...</LI>
+                    </UL>
+                </UL>
+            </section>
+
+            <section>
+                <h2>Recipes (1/3)</h2>
+                <UL>
+                    <LI>Reduce possibilities</LI>
+                    <UL>
+                        <LI>Disable things in the UI</LI>
+                        <LI>In your event handlers, discard irrelevant situations immediately</LI>
+                    </UL>
+                    <LI>Binding (library support)</LI>
+                    <UL>
+                        <LI>Good for 1:1 dependencies</LI>
+                        <LI>Data, State, Actions</LI>
+                        <LI>Depending on Library:
+                            <BR/>Conversions or logic may be pluggable
+                        </LI>
+                    </UL>
+                </UL>
+            </section>
+            <section>
+                <h2>Recipes (2/3)</h2>
+                <UL>
+                    <LI>Handler and Code</LI>
+                    <UL>
+                        <LI>Can be used in n:m situations</LI>
+                        <LI>Pattern: "do the right thing" method</LI>
+                        <UL>
+                            <LI>Can be called many times</LI>
+                            <LI>Gets its input information from "public" sources</LI>
+                            <LI>Uses that to determine what the correct result is</LI>
+                            <UL>
+                                <LI>Be robust, the input may look inconsistent here</LI>
+                            </UL>
+                            <LI>Register it as callback to all events which are fired when one of the inputs changes</LI>
+                        </UL>
+                        <LI>Rule: Only have one place where a specific feature of the UI is changed!</LI>
+                    </UL>
+                </UL>
+            </section>
+            <!-- TODO BOL (3): Pro/Cons: Use data from Event vs. use data from source -->
+            <section>
+                <h2>Recipes (3/3)</h2>
+                <UL>
+                    <LI class="no-bullet">ReactiveX: Observables on Steroids</LI>
+                    <LI>Idea: chain (potentially asynchronous) functional steps logically
+                    </LI>
+                    <LI>Sort of looks like Java Streams, but</LI>
+                    <UL>
+                        <LI>Streams pull, Observables push</LI>
+                        <LI>Reusable</LI>
+                        <LI>Lots of features related to asynchronous behaviour</LI>
+                        <LI>...</LI>
+                    </UL>
+                    <LI>Avoid the callback hell</LI>
+                    <LI>But difficult to master</LI>
+                </UL>
+            </section>
+            <section>
+                <P>RxJs Example</P>
+                <img class="plain" src="rxjs-example.PNG" style="height: 100%; width: 100%"/>
+            </section>
+            <section>
+                <h2>Pitfalls</h2>
+                <UL>
+                    <LI>Memory Leaks</LI>
+                    <UL>
+                        <LI>Unregister when using a source with a different lifecycle</LI>
+                    </UL>
+                    <LI>Get values from the correct source</LI>
+                    <UL>
+                        <LI>No guaranteed order for listeners on the same event source</LI>
+                        <LI>Derived logic's state may not be updated</LI>
+                    </UL>
+                </UL>
             </section>
 
             <section>

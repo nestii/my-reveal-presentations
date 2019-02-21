@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Presentation about Chrome Developer Tools and more...",
   "scripts": {
-    "start": "browser-sync start --config bs-config.js",
+    "start": "browser-sync start --config bs-config.js --port 4000",
     "build": "jspm bundle js/main --inject",
     "buildSafeMode": "jspm bundle-sfx js/main safe-bundle.js",
     "devMode": "jspm unbundle"
