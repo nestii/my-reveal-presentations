@@ -360,6 +360,10 @@
                     <UL>
                         <LI>Performance, layout and focus problems</LI>
                     </UL>
+                    <LI>Frontend or Backend</LI>
+                    <UL>
+                        <LI>Where is the best place for logic?</LI>
+                    </UL>
                 </ul>
                 <!-- TODO BOL (3): Include? What costs runtime in the client? -->
             </section>
@@ -545,6 +549,13 @@
                             behaviour</LI>
                     </UL>
                     <LI class="arrow">Rely on Experience (or really smart developers)</LI>
+                </ul>
+            </section>
+            <section>
+                <h2>Frontend or Backend</h2>
+                <ul>
+                    <li class="no-bullet">Where is the best place for logic?</li>
+                    <LI>TODO BOL</LI>
                 </ul>
             </section>
         </section>
@@ -776,7 +787,7 @@
                         <LI>Pattern: "do the right thing" method</LI>
                         <UL>
                             <LI>Can be called many times</LI>
-                            <LI>Gets its input information from "public" sources</LI>
+                            <LI>Requests its input information from "public" sources</LI>
                             <LI>Uses that to determine what the correct result is</LI>
                             <UL>
                                 <LI>Be robust, the input may look inconsistent here</LI>
@@ -812,6 +823,7 @@
             <section>
                 <h2>Pitfalls</h2>
                 <UL>
+                    <LI>Learning Curve</LI>
                     <LI>Memory Leaks</LI>
                     <UL>
                         <LI>Unregister when using a source with a different lifecycle</LI>
