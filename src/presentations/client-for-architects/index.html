@@ -570,7 +570,7 @@
                 </ul>
             </section>
             <section>
-                <h2>Why shift logic between backend and frontend?</h2>
+                <h2>Why shift/duplicate logic between backend and frontend?</h2>
                 <ul>
                     <li class="no-bullet">User Experience Options</li>
                     <li>Performance</li>
@@ -580,10 +580,21 @@
                         <li>Delayed loading for things which may not be needed</li>
                         <li>Smooth user guidance (page load vs. single page applications)</li>
                     </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Why shift/duplicate logic...? (cont.)</h2>
+                <ul>
+                    <li class="no-bullet">User Experience Options</li>
                     <li>Immediate feedback</li>
                     <ul>
                         <li>Validate in the frontend as much as possible</li>
                     </ul>
+                    <li class="no-bullet">Other considerations</li>
+                    <li>Unified Multi-Purpose Backend-API:
+                        <br/>
+                        If it doesn't match the needs of the client, consider an additional backend service
+                    </LI>
                     <li>Development cost</li>
                     <li class="no-bullet">But: Never trust a client!</li>
                 </ul>
