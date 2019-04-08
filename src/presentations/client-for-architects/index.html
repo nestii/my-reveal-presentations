@@ -555,7 +555,91 @@
                 <h2>Frontend or Backend</h2>
                 <ul>
                     <li class="no-bullet">Where is the best place for logic?</li>
-                    <LI>TODO BOL</LI>
+                    <LI>Major Constraints</LI>
+                    <UL>
+                        <LI>Transactions</LI>
+                        <UL>
+                            <LI>Transactions cannot be spread across multiple backend calls</LI>
+                        </UL>
+                        <LI>Calls</LI>
+                        <UL>
+                            <LI>Performance: Number and transmission size</LI>
+                            <LI>Understanding: API complexity</LI>
+                        </UL>
+                    </UL>
+                </ul>
+            </section>
+            <section>
+                <h2>Why shift logic between backend and frontend?</h2>
+                <ul>
+                    <li class="no-bullet">User Experience Options</li>
+                    <li>Performance</li>
+                    <ul>
+                        <li>Load and process partial data for early interaction, e.g. first page of list</li>
+                        <li>Preload/Cache data where possible to reduce time</li>
+                        <li>Delayed loading for things which may not be needed</li>
+                        <li>Smooth user guidance (page load vs. single page applications)</li>
+                    </ul>
+                    <li>Immediate feedback</li>
+                    <ul>
+                        <li>Validate in the frontend as much as possible</li>
+                    </ul>
+                    <li>Development cost</li>
+                    <li class="no-bullet">But: Never trust a client!</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Options by Application Type</h2>
+                <ul>
+                    <li>Native: Mainly driven by user experience</li>
+                    <li>Classic Web: You have no real choice :-)</li>
+                    <li>Modern Web</li>
+                    <ul>
+                        <li>Mainly driven by user experience</li>
+                        <li>Beware of IE11: Significantly slower performance of JavaScript</li>
+                    </ul>
+                    <li>Progressive Web</li>
+                    <ul>
+                        <li>Currently highly specific depending on what is needed
+                        <br/>E.g. Push, Offline, Responsive, Device-Integration
+                        </li>
+                    </ul>
+                    <li>Mobile: Expect bad connection behaviour</li>
+                    <ul>
+                        <li>robust error handling</li>
+                        <li>optimized calls</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Microservices (1/2)</h2>
+                <ul>
+                    <li class="no-bullet">Frontendintegration vs. Backendintegration</li>
+                    <li>Problem:
+                        <br/>Integrated UI for multiple microservices with transactional data</li>
+                    <li>Frontend integration:
+                        <br/>Frontend calls multiple backend services
+                        <UL>
+                            <li class="plus">progress control and detailed user feedback concerning success and failure</li>
+                            <li class="minus">error information for bug analysis is distributed</li>
+                        </UL>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Microservices (2/2)</h2>
+                <ul>
+                    <li>Backend integration:
+                        <br/>Frontend calls one backend service that distributes
+                        <UL>
+                            <li class="plus">centralized status management possible</li>
+                            <li class="minus">combined error results necessary</li>
+                            <li class="minus">may cause problems with default transaction logic</li>
+                        </UL>
+                    </li>
+                    <li>Both cases:
+                    <br/>Decision on how to display partial errors
+                    </li>
                 </ul>
             </section>
         </section>
@@ -1015,6 +1099,7 @@
                         <LI>Does it have a presence on Stack Overflow?</LI>
                         <LI>What is the bug status?</LI>
                         <LI>How old / stable / up-to-date is it?</LI>
+                        <LI>How often do we get new releases and how complex is migration?</LI>
                     </UL>
                     <LI>Is it platform specific?</LI>
                     <UL>

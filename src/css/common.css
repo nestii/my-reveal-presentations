@@ -40,6 +40,32 @@
     padding-right: 5px;
 }
 
+.reveal li.plus {
+    list-style: none;
+}
+
+.reveal li.plus::before {
+    content: "+";
+    font-weight: bold;
+    color: green;
+    position: relative;
+    left: -1em;
+    margin-right: -0.4em;
+}
+
+.reveal li.minus {
+    list-style: none;
+}
+
+.reveal li.minus::before {
+    content: "-";
+    font-weight: bold;
+    color: red;
+    position: relative;
+    left: -1em;
+    margin-right: -0.4em;
+}
+
 .reveal .slides .inline {
     display: inline;
     margin: auto
