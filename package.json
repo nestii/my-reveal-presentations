@@ -17,7 +17,7 @@
   "author": "Bartek Pietrowski",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "2.18.8",
+    "browser-sync": "2.27.10",
     "eslint": "3.18.0",
     "eslint-config-standard": "7.1.0",
     "eslint-plugin-promise": "3.5.0",
